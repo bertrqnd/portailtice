@@ -1,0 +1,87 @@
+[
+  {
+    "title": "Moodle",
+    "url": "https://moodle.iut-tlse3.fr/",
+    "image": "src/moodle.png"
+  },
+  {
+    "title": "Moodle Test",
+    "url": "https://moodletest.iut-tlse3.fr/",
+    "image": "src/moodletest.jpg"
+  },
+  {
+    "title": "GLPI",
+    "url": "https://support.iut-tlse3.fr",
+    "image": "src/glpi.png"
+  },
+  {
+    "title": "ENT personnel",
+    "url": "https://ent-personnels.univ-tlse3.fr",
+    "image": "src/ent.png"
+  },
+  {
+    "title": "Office",
+    "url": "https://portal.office.com",
+    "image": "src/office.png"
+  },
+  {
+    "title": "Compilatio",
+    "url": "https://app.compilatio.net",
+    "image": "src/compilatio.png"
+  },
+  {
+    "title": "Wooclap",
+    "url": "https://app.wooclap.com",
+    "image": "src/wooclap.jpg"
+  },
+  {
+    "title": "Wooflash",
+    "url": "https://app.wooflash.com",
+    "image": "src/wooflash.jpg"
+  },
+  {
+    "title": "Mes services numériques",
+    "url": "https://mes-services-numeriques.iut-tlse3.fr/",
+    "image": "src/msn.png"
+  },
+  {
+    "title": "GCID",
+    "url": "https://gcid.iut-tlse3.fr",
+    "image": "src/gcid.png"
+  },
+  {
+    "title": "Celcat - emploi du temps",
+    "url": "https://edt.univ-tlse3.fr",
+    "image": "src/celcat.jpg"
+  },
+  {
+    "title": "Qui fait quoi",
+    "url": "https://quifaitquoi.iut-tlse3.fr/",
+    "image": "src/qfq.png"
+  },
+  {
+    "title": "Pass IUT",
+    "url": "https://www.iut-tlse3.fr/passiut/",
+    "image": "src/passiut.png"
+  },
+  {
+    "title": "Trombinoscope",
+    "url": "https://trombi.iut-tlse3.fr/",
+    "image": "src/trombi.png"
+  },
+  {
+    "title": "Sympa personnel",
+    "url": "https://www.iut-tlse3.fr/wws/home",
+    "image": "src/sympa.png"
+  },
+  {
+    "title": "Sympa étudiant",
+    "url": "https://www.iut-tlse3.fr/wwsetu",
+    "image": "src/sympa.png"
+  },
+  {
+    "title": "IUT en ligne",
+    "url": "https://iut.univ-tlse3.fr/",
+    "image": "src/passiut.png"
+  }
+]
