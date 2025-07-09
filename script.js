@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const allServices = await response.json();
     const services = allServices.className === "services" ? allServices.services : allServices;
 
+// sort services by alphabetical order
+    services.sort((a, b) => a.title.localeCompare(b.title));
 
 // for loop that creates the services
     for (let i = 0; i < services.length; i++) {
@@ -23,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         icon.className = "service-icon";
         link.appendChild(icon);
 
-// texte
+// text
         const span = document.createElement("span");
         span.textContent = service.title;
         link.appendChild(span);
