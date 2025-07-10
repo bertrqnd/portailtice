@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         span.textContent = service.title;
         link.appendChild(span);
 
-
+// link to the services container
         document.getElementById("services-container").appendChild(link);
     }
 });

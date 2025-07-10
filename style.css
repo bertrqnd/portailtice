@@ -1,7 +1,17 @@
 body {
       font-family: Arial, sans-serif;
       padding: 20px;
+      background: #23272fdc; /* gris foncé */
     }
+    h1 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #fff;
+      font-size: 2.2em;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+    /* Google Fonts Montserrat */
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
     #services-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -16,10 +26,10 @@ body {
       max-width: 100%;
       transition: box-shadow 0.2s ease, transform 0.2s ease;
       background: #fff;
+      border-radius: 10px; /* border radius léger */
     }
     .service:hover {
       transform: scale(1.03);
-      box-shadow: 0 4px 16px rgba(230, 54, 54, 0.08);
     }
     .service img {
       width: 50px;
@@ -30,11 +40,7 @@ body {
       object-fit: contain;
     }
     a.service {
-      color: #333;
+      color: #505050;
       text-decoration: none;
       font-weight: bold;
-    }
-    a.service:visited {
-      color: #333;
-      text-decoration: none;
     }
