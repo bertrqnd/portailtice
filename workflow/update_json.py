@@ -5,7 +5,7 @@ import re
 import requests
 
 # Télécharger le fichier Excel depuis OneDrive
-onedrive_url = "https://TON_LIEN_ONEDRIVE_DIRECT"  # Remplace par ton lien direct
+onedrive_url = "https://toulouse3.sharepoint.com/:x:/r/sites/IUTA-CRI/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B6eb8d196-8d0b-4e81-8964-b7860d8851db%7D&wdOrigin=TEAMS-MAGLEV.undefined_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1756803475524&web=1"  # Remplace par ton lien direct
 excel_filename = "Portail_TICE.xlsx"
 
 response = requests.get(onedrive_url)
