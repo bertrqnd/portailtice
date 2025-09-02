@@ -1,36 +1,31 @@
 // wait for the DOM to be loaded before executing the code
 document.addEventListener("DOMContentLoaded", async () => {
-
-// fetching the json
     const response = await fetch("services.json");
     const allServices = await response.json();
-    const services = allServices.className === "services" ? allServices.services : allServices;
 
-// sort services by alphabetical order
-    services.sort((a, b) => a.title.localeCompare(b.title));
+    // Helper pour créer les liens
+    function renderServices(services, containerId) {
+        services.sort((a, b) => a.title.localeCompare(b.title));
+        const container = document.getElementById(containerId);
+        for (const service of services) {
+            const link = document.createElement("a");
+            link.href = service.url;
+            link.target = "_blank";
+            link.className = "service";
 
-// for loop that creates the services
-    for (let i = 0; i < services.length; i++) {
-        const service = services[i];
+            const icon = document.createElement("img");
+            icon.src = service.image;
+            icon.className = "service-icon";
+            link.appendChild(icon);
 
- // link
-        const link = document.createElement("a");
-        link.href = service.url;
-        link.target = "_blank";
-        link.className = "service";
+            const span = document.createElement("span");
+            span.textContent = service.title;
+            link.appendChild(span);
 
-// image
-        const icon = document.createElement("img");
-        icon.src = service.image;
-        icon.className = "service-icon";
-        link.appendChild(icon);
-
-// text
-        const span = document.createElement("span");
-        span.textContent = service.title;
-        link.appendChild(span);
-
-// link to the services container
-        document.getElementById("services-container").appendChild(link);
+            container.appendChild(link);
+        }
     }
+
+    renderServices(allServices.users, "services-users");
+    renderServices(allServices.admin, "services-admin");
 });
