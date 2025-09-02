@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Helper pour créer les liens
     function renderServices(services, containerId) {
-        services.sort((a, b) => a.title.localeCompare(b.title));
+        services.sort((a, b) => a.title.localeCompare(b.title, 'fr', { sensitivity: 'base' }));
         const container = document.getElementById(containerId);
         for (const service of services) {
             const link = document.createElement("a");

@@ -8,7 +8,7 @@
     {
       "title": "Moodle Test",
       "url": "https://moodletest.iut-tlse3.fr/",
-      "image": "src/moodle.png"
+      "image": "src/moodletest.jpg"
     },
     {
       "title": "Limesurvey",
@@ -43,17 +43,17 @@
     {
       "title": "Wooclap",
       "url": "https://app.wooclap.com",
-      "image": "src/wooclap.png"
+      "image": "src/wooclap.jpg"
     },
     {
       "title": "Wooflash",
       "url": "https://app.wooflash.com",
-      "image": "src/wooflash.png"
+      "image": "src/wooflash.jpg"
     },
     {
       "title": "QUizWizard",
       "url": "https://app.getquizwizard.com/",
-      "image": "src/quizwizard.png"
+      "image": "src/quizwizard.jpg"
     },
     {
       "title": "Mindview",
@@ -63,7 +63,7 @@
     {
       "title": "Mes services numériques",
       "url": "https://mes-services-numeriques.iut-tlse3.fr/",
-      "image": "src/services.png"
+      "image": "src/iut.png"
     },
     {
       "title": "GCID",
@@ -83,12 +83,12 @@
     {
       "title": "Celcat - emploi du temps",
       "url": "https://edt.iut-tlse3.fr/planning/",
-      "image": "src/celcat.png"
+      "image": "src/celcatg.png"
     },
     {
       "title": "Celcat - gestion emploi du temps",
       "url": "https://edt.iut-tlse3.fr/",
-      "image": "src/celcat.png"
+      "image": "src/celcat.jpg"
     },
     {
       "title": "Qui fait quoi",
@@ -98,7 +98,7 @@
     {
       "title": "Pass IUT",
       "url": "https://www.iut-tlse3.fr/passiut/",
-      "image": "src/passiut.png"
+      "image": "src/iut.png"
     },
     {
       "title": "Trombinoscope",
@@ -155,7 +155,7 @@
     {
       "title": "Admin teams",
       "url": "https://admin.teams.microsoft.com/",
-      "image": "src/teams.png"
+      "image": "src/teams.jpg"
     },
     {
       "title": "Admin Sharepoint online",
@@ -170,7 +170,7 @@
     {
       "title": "Entra",
       "url": "https://entra.microsoft.com",
-      "image": "src/entra.png"
+      "image": "src/entra.jpg"
     },
     {
       "title": "Base de données Exchange",
