@@ -28,4 +28,67 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     renderServices(allServices.users, "services-users");
     renderServices(allServices.admin, "services-admin");
+
+// MODALE
+const modal = document.getElementById('modal');
+const openModalBtn = document.getElementById('openModalBtn');
+const closeModalBtn = document.getElementById('closeModalBtn');
+const loginSection = document.getElementById('loginSection');
+const addAppSection = document.getElementById('addAppSection');
+const loginForm = document.getElementById('loginForm');
+const loginError = document.getElementById('loginError');
+const addAppForm = document.getElementById('addAppForm');
+
+// Ouvre la modale
+openModalBtn.onclick = () => {
+  modal.style.display = 'block';
+  loginSection.style.display = 'block';
+  addAppSection.style.display = 'none';
+  loginError.style.display = 'none';
+};
+
+// Ferme la modale
+closeModalBtn.onclick = () => { modal.style.display = 'none'; };
+
+// Ferme si clic en dehors
+window.onclick = (e) => {
+  if (e.target == modal) modal.style.display = 'none';
+};
+
+// Login simple (user: admin, mdp: admin)
+loginForm.onsubmit = function(e) {
+  e.preventDefault();
+  const user = document.getElementById('loginUser').value;
+  const pwd = document.getElementById('loginPwd').value;
+  if (user === 'admin' && pwd === 'admin') {
+    loginSection.style.display = 'none';
+    addAppSection.style.display = 'block';
+    loginError.style.display = 'none';
+  } else {
+    loginError.style.display = 'block';
+  }
+};
+
+// Ajout dynamique d'une application
+addAppForm.onsubmit = function(e) {
+  e.preventDefault();
+  const title = document.getElementById('appName').value.trim();
+  const url = document.getElementById('appUrl').value.trim();
+  const category = document.getElementById('appCategory').value;
+  const imageInput = document.getElementById('appImage');
+  const file = imageInput.files[0];
+  if (!title || !url || !file) return;
+  const reader = new FileReader();
+  reader.onload = function(event) {
+    const newService = {
+      title: title,
+      url: url,
+      image: event.target.result // base64
+    };
+    renderServices([newService], category === 'users' ? 'services-users' : 'services-admin');
+    modal.style.display = 'none';
+  };
+  reader.readAsDataURL(file);
+  e.target.reset();
+};
 });

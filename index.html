@@ -10,6 +10,39 @@
 <body>
   <div class="main-container">
     <h1>Portail des applications TICE</h1>
+    <button id="openModalBtn">Ajouter une application</button>
+
+    <!-- Modale -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <div id="loginSection">
+          <h2>Connexion</h2>
+          <form id="loginForm">
+            <label>Utilisateur : <input type="text" id="loginUser" required></label><br>
+            <label>Mot de passe : <input type="password" id="loginPwd" required></label><br>
+            <button type="submit">Se connecter</button>
+          </form>
+          <div id="loginError" style="color:red;display:none;">Identifiants incorrects.</div>
+        </div>
+        <div id="addAppSection" style="display:none;">
+          <h2>Ajouter une application</h2>
+          <form id="addAppForm">
+            <label>Nom de l'application : <input type="text" id="appName" required></label><br>
+            <label>Lien vers l'application : <input type="url" id="appUrl" required></label><br>
+            <label>Image de l'application : <input type="file" id="appImage" accept="image/*" required></label><br>
+            <label>Catégorie :
+              <select id="appCategory" required>
+                <option value="users">Utilisateur</option>
+                <option value="admin">Administration</option>
+              </select>
+            </label><br>
+            <button type="submit">Ajouter</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <h2>Plateformes utilisateurs</h2>
     <div id="services-users"></div>
     <h2>Plateformes administration</h2>
