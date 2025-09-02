@@ -69,8 +69,13 @@ loginForm.onsubmit = function(e) {
   }
 };
 
-// Ajout dynamique d'une application
-addAppForm.onsubmit = function(e) {
+// Initialise Supabase
+const supabaseUrl = 'https://dpboaxdydkqvlzmbtarb.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRwYm9heGR5ZGtxdmx6bWJ0YXJiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4MTIwMDQsImV4cCI6MjA3MjM4ODAwNH0.--NZ3zILqPr6uHiAZzcgoYtRuLlACuSYc9xZM4dVaCg';
+const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+// Ajout dynamique d'une application dans Supabase
+addAppForm.onsubmit = async function(e) {
   e.preventDefault();
   const title = document.getElementById('appName').value.trim();
   const url = document.getElementById('appUrl').value.trim();
@@ -78,17 +83,41 @@ addAppForm.onsubmit = function(e) {
   const imageInput = document.getElementById('appImage');
   const file = imageInput.files[0];
   if (!title || !url || !file) return;
+
   const reader = new FileReader();
-  reader.onload = function(event) {
-    const newService = {
-      title: title,
-      url: url,
-      image: event.target.result // base64
-    };
-    renderServices([newService], category === 'users' ? 'services-users' : 'services-admin');
-    modal.style.display = 'none';
+  reader.onload = async function(event) {
+    const imageData = event.target.result;
+    // Ajoute dans Supabase
+    const { error } = await supabase
+      .from('applications')
+      .insert([{ title, url, image: imageData, category }]);
+    if (!error) {
+      modal.style.display = 'none';
+      addAppForm.reset();
+      loadApplications(); // recharge la liste
+    } else {
+      alert('Erreur lors de l\'ajout');
+    }
   };
   reader.readAsDataURL(file);
-  e.target.reset();
 };
+
+// Charge les applications depuis Supabase
+async function loadApplications() {
+  const { data, error } = await supabase
+    .from('applications')
+    .select('*');
+  if (error) return;
+  // Sépare users/admin
+  const users = data.filter(app => app.category === 'users');
+  const admin = data.filter(app => app.category === 'admin');
+  // Vide les containers
+  document.getElementById('services-users').innerHTML = '';
+  document.getElementById('services-admin').innerHTML = '';
+  renderServices(users, 'services-users');
+  renderServices(admin, 'services-admin');
+}
+
+// Au chargement, affiche les applications Supabase
+document.addEventListener("DOMContentLoaded", loadApplications);
 });
