@@ -1,0 +1,11 @@
+
+{
+  "models": [
+    {
+      "title": "Mistral (Ollama)",
+      "model": "ollama/mistral",
+      "apiBase": "http://localhost:11434",
+      "provider": "ollama"
+    }
+  ]
+}
